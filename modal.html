@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+</head>
+<body>
+    <button class="ticket-buy js-buy-ticket">Buy Tickets</button>
+    <button class="search-button js-search-show">
+        <i class="ti-search"></i>
+    </button>
+    
+    <div class="modal js-modal">
+        <div class="modal-content js-modal-content">
+            <div class="close js-modal-close"><i class="ti-close"></i></div>
+            <header class="modal-header">
+                <h2><i class="ti-bag"></i> Tickets</h2>
+            </header>
+            <div class="modal-body">
+                <label for=""><i class="ti-shopping-cart"></i> Tickets, $15 per person</label>
+                <input type="text" class="modal-input" placeholder="How many?">
+                <label for=""><i class="ti-user"></i> Send To</label>
+                <input type="text" class="modal-input" placeholder="How many?">
+                <button class="modal-button">PAY <i class="ti-check"></i></button>
+            </div>
+            <footer class="modal-footer">
+                <button class="close-button js-modal-close">Close <i class="ti-close"></i></button>
+                <p>Need <a href="">help?</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal-search">
+        <div class="search-content">
+            <input type="text" class="search-input" placeholder="Search.......">
+            <button class="search-button"><i class="ti-search"></i></button>
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    const buyBtns = document.querySelectorAll('.js-buy-ticket');
+    const modal = document.querySelector('.js-modal');
+    const closeBtns = document.querySelectorAll('.js-modal-close');
+    const modalContent = document.querySelector('.js-modal-content');
+
+    const modalSearch = document.querySelector('.modal-search');
+    const searchContent = document.querySelector('.search-content');
+    const btnSearch = document.querySelector('.js-search-show');
+
+    
+    function showBuyTickets()
+    {
+        modalContent.classList.remove('modal-fadeout');
+        modal.classList.add('open-modal');
+    }
+    
+    function closeBuyTickets()
+    {
+        setTimeout(function(){
+            modal.classList.remove('open-modal');
+        }, 600);
+        modalContent.classList.add('modal-fadeout');
+    }
+    
+    function showSearch()
+    {
+        searchContent.classList.remove('zoom-out');
+        modalSearch.classList.add('open-modal');   
+    }
+
+    function closeSearch()
+    {
+        setTimeout(function(){
+            modalSearch.classList.remove('open-modal');
+        }, 500);
+        searchContent.classList.add('zoom-out');
+    }
+    
+    for(const buyBtn of buyBtns){
+        buyBtn.addEventListener('click', showBuyTickets);
+    }
+    for(const closeBtn of closeBtns){
+        closeBtn.addEventListener('click', closeBuyTickets);
+    }
+
+    modal.addEventListener('click', closeBuyTickets);
+
+    modalContent.addEventListener('click', function(e) {
+        e.stopPropagation();
+    })
+
+    searchContent.addEventListener('click', function(e) {
+        e.stopPropagation();
+    })
+
+    modalSearch.addEventListener('click', closeSearch);
+
+    btnSearch.addEventListener('click', showSearch);
+</script>
+</html>
