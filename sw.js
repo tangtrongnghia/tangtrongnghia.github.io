@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mycache_v1';
+const CACHE_NAME = 'mycache_v2';
 const urlsToCache = ['/', '/style.css', '/main.js'];
 
 self.addEventListener('install', function (event) {
@@ -24,7 +24,7 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('activate', function(event) {
-    var cacheWhitelist = ['mycache_v2', 'mycache_v1'];
+    var cacheWhitelist = ['mycache_v1'];
 
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
