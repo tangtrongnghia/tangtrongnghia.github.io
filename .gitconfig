@@ -1,2 +1,0 @@
-[alias] 
-    haha = git add . && git commit -m 'hahah' && git push
