@@ -25,7 +25,8 @@ const APP = {
 
             // 4. Remove/Unregister ServiceWorker
             navigator.serviceWorker.getRegistration().then((regs) => {
-                for (const reg of regs) {
+                console.log(regs)
+                for (let reg of regs) {
                     reg.unregister().then(isUnreg => console.log(isUnreg))
                 }
             })
