@@ -3,14 +3,14 @@ console.log(`%c ${MSG}`, 'padding: 0.3rem 1.5rem; font-family: Roboto; font-size
 
 
 function showNotification() {
-    alert(123)
     if(window.Notification && Notification.permission !== "denied") {
-        alert(456)
         Notification.requestPermission(function(status) {  // status is "granted", if accepted by user
             var n = new Notification('Nghĩa thông báo!', { 
                 body: 'Nghĩa nội dung !!',
                 icon: '/images/nghia-192x192.png'
             }); 
         });
+    } else {
+        alert('Trình duyệt không hổ trợ !')
     }
 }
