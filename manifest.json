@@ -1,0 +1,22 @@
+{
+	"name": "PWA Của Nghĩa ☂",
+	"short_name": "Nghĩa ☂",
+	"description": "PWA Của Nghĩa ☂",
+	"start_url": "./index.html",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#f5f5f5",
+	"theme_color": "#29434d",
+	"icons": [
+		{
+			"src": "./images/nghia-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./images/nghia-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}
