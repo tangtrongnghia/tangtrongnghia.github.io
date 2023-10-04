@@ -6,7 +6,7 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"background_color": "#f5f5f5",
-	"theme_color": "#29434d",
+	"theme_color": "#e75858",
 	"icons": [
 		{
 			"src": "./images/nghia-192x192.png",
