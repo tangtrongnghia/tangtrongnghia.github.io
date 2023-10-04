@@ -37,3 +37,6 @@ const APP = {
         }
     },
 }
+
+// init sau khi DOM đã được load xong
+document.addEventListener('DOMContentLoaded', APP.init)
