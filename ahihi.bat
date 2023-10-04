@@ -1,3 +1,3 @@
 git add .
-git commit -m 'Some message'
+git commit -m "toi vua commit luc `date`"
 git push
