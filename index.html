@@ -12,17 +12,7 @@
 
     <button onclick="showNotification()">Push</button>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/sw.js').then(function (registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope)
-                }, function (err) {
-                    console.log('ServiceWorker registration failed: ', err)
-                })
-            })
-        }
-    </script>
-    <script src="/main.js"></script>
+    <script src="/app.js"></script>
+    <script src="/plapla.js"></script>
 </body>
 </html>
