@@ -21,3 +21,4 @@ Service Worker là một loại công cụ trong các ứng dụng web tiến b�
 
 ## Vòng đời
 ![lifecycle](https://nghia-sw.pages.dev/images/lifecycle.png)
+Tham khảo thêm tại: [https://web.dev/service-worker-lifecycle/](https://web.dev/service-worker-lifecycle/)
