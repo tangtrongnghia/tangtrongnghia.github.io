@@ -24,11 +24,11 @@ const APP = {
             }
 
             // 4. Remove/Unregister ServiceWorker
-            navigator.serviceWorker.getRegistration().then((reg) => {
-                if (reg) {
-                    reg.unregister()
-                }
-            })
+            // navigator.serviceWorker.getRegistration().then((reg) => {
+            //     if (reg) {
+            //         reg.unregister()
+            //     }
+            // })
 
             // 5. message from ServiceWorker
             // Cái này từ từ =))
