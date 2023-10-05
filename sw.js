@@ -1,40 +1,46 @@
-const CACHE_NAME = 'mycache_v2';
-const urlsToCache = ['/style.css', '/plapla.js'];
+const CACHE_NAME = 'mycache_v2'
+const urlsToCache = ['/style.css', '/plapla.js']
 
 self.addEventListener('install', function (event) {
   // Perform install steps
     event.waitUntil(
         caches.open(CACHE_NAME).then(function (cache) {
-            console.log('Opened cache');
-            return cache.addAll(urlsToCache);
+            console.log('Opened cache')
+            return cache.addAll(urlsToCache)
         })
-    );
-});
-
-self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request).then(function (response) {
-            // Cache hit - return response
-            if (response) {
-                return response;
-            }
-            return fetch(event.request);
-        })
-    );
-});
+    )
+})
 
 self.addEventListener('activate', function(event) {
-    var cacheWhitelist = ['mycache_v2'];
+    var cacheWhitelist = ['mycache_v2']
 
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.map(function(cacheName) {
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
+                        return caches.delete(cacheName)
                     }
                 })
-            );
+            )
         })
-    );
-});
+    )
+})
+
+
+// Chổ này rất hay ho - nơi can thiệp vào request.
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request).then(function (response) {
+            // Cache hit - return response
+            if (response) {
+                return response
+            }
+            return fetch(event.request)
+        })
+    )
+})
+
+self.addEventListener('message', function (event) {
+    // message from webpage
+})

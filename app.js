@@ -30,7 +30,7 @@ const APP = {
                 }
             })
 
-            // 5. Lắng nghe message từ SW
+            // 5. message from ServiceWorker
             // Cái này từ từ =))
         } else {
             console.log('ServiceWorker are not supported')

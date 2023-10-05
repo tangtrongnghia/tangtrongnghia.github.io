@@ -20,3 +20,4 @@ Service Worker là một loại công cụ trong các ứng dụng web tiến b�
 * **Geofencing:** Service Worker có thể được sử dụng để theo dõi vị trí của người dùng và thực hiện các hành động dựa trên vị trí, chẳng hạn như hiển thị thông báo khi người dùng vào một khu vực cụ thể...
 
 ## Vòng đời
+![lifecycle](https://nghia-sw.pages.dev/images/lifecycle.png)
